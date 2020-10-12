@@ -5,8 +5,7 @@
   - [Location issue](#location-issue)
   - [Path issue](#path-issue)
 - [Divers](#divers)
-      - [README Badges](#readme-badges)
-      - [Navigation](#navigation)
+- [Update React Native](#update-react-native)
 
 ## What about IDEWorkspaceChecks.plist?
 
@@ -46,12 +45,16 @@ From: https://stackoverflow.com/questions/53028367/glog-configure-warning-missin
 
 ## Divers
 
-##### README Badges
+**README Badges**
 
 From https://shields.io
 
-##### Navigation
+**Navigation**
 
 TODO Fill it.
 
 https://reactnavigation.org/docs/navigation-prop/ props navigation `props.navigation`
+
+## Update React Native
+
+If we missed too many updates and need to upgrade for a newer iOS release, it is sometimes way way way more productive to consider RN as a wrap, and just recreate an empty project wit the the new layer and then putting all the JS logic inside. More and more stuff around are auto-generated depending on your dependencies now. 
