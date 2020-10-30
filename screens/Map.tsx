@@ -13,7 +13,11 @@ const ASPECT_RATIO = screen.width / screen.height;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
-export default props => {
+interface Props {
+  navigation: any;
+}
+
+export default (props: any) => {
   const [state, setState] = useState({
     location: null,
   });
