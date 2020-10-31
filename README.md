@@ -54,7 +54,7 @@ npm run ios / npm run android
 - **RN 0.63.3**
 - **Expo Free**
 - **Libs**: React Hooks 💪
-- **Language**: [Pure JavaScript ESNext](https://www.ecma-international.org/ecma-262/#sec-intro) ➡️ TypeScript soon ❤️
+- **Language**: [Pure JavaScript ESNext](https://www.ecma-international.org/ecma-262/#sec-intro) ➡️ TypeScript soon ❤️ (On going migration)
 - **Store**
   - React Redux
   - Redux Saga (side effects)

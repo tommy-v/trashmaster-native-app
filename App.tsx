@@ -9,7 +9,6 @@ import Map from './screens/Map';
 import Camera from './screens/Camera';
 import NewTrash from './screens/NewTrash';
 import TrashDetails from './screens/TrashDetails';
-import Login from './screens/Login';
 
 // Store
 import {persistor, store} from './redux/configureStore';
@@ -19,7 +18,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 const Stack = createStackNavigator();
 
 const AppContext = () => {
-  const globalState = useSelector(state => state.global);
+  const globalState = useSelector((state: any) => state.global);
 
   return (
     <PersistGate loading={null} persistor={persistor}>
@@ -27,11 +26,11 @@ const AppContext = () => {
       <Suspense fallback={null}>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name="login" component={Login} />
+            {/* <Stack.Screen name="login" component={Login} /> */}
             <Stack.Screen
               name="map"
               component={Map}
-              options={{title: 'TrashMap'}}
+              options={{headerShown: false}}
             />
             <Stack.Screen name="camera" component={Camera} />
             <Stack.Screen name="newTrash" component={NewTrash} />
