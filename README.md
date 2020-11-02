@@ -62,6 +62,7 @@ npm run ios / npm run android
 - **Loadings** [React Native Loading Spinner Overlay](https://github.com/joinspontaneous/react-native-loading-spinner-overlay) (sub dependencies ✅)
 - **Http**: [Axios](https://github.com/axios/axios) (soon)
 - **Forms**: [React Hook Form](https://react-hook-form.com)
+- **Icons**: [Icon vectors](https://github.com/oblador/react-native-vector-icons#bundled-icon-sets)
 
 ## 📚 Documentation
 

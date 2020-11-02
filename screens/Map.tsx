@@ -6,6 +6,7 @@ import MapView, {Marker} from 'react-native-maps';
 import { useDispatch, useSelector } from 'react-redux';
 import {getAllTrashes} from '../redux/actions/trash';
 import Geolocation from '@react-native-community/geolocation';
+import AddButton from '../components/AddButton'; 
 
 const screen = Dimensions.get('window');
 
@@ -110,19 +111,16 @@ export default (props: any) => {
       <View style={styles.buttonContainer}>
         <View style={styles.littleButtonsContainer}>
           <View />
-          <TouchableOpacity
-            onPress={() => openCamera()}
-            style={[styles.bubble, styles.trashButton]}
-          />
+          <AddButton action={openCamera} />
           <TouchableOpacity
             onPress={() => goToPersonalLocation()}
-            style={[styles.bubble, styles.locationButton]}
+            style={[styles.locationButton]}
           />
         </View>
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
