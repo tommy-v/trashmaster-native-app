@@ -66,7 +66,7 @@ export default (props: Props) => {
   const createMarkers = () => {
     return trashState.mapTrashes.map((trash: any) => (
       <Marker.Animated
-        key="ADD_KEY"
+        key={`ADD_KEY${trash.id}`}
         identifier={trash.id}
         coordinate={{
           latitude: trash.latitude,
