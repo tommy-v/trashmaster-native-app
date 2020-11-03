@@ -83,8 +83,8 @@ export default (props: any) => {
           scrollEnabled={false}
           zoomEnabled={false}>
           <Marker.Animated
-            key="ADD_KEY"
-            identifier="dkddwd"
+            key="DEFAULT_KEY"
+            identifier="DEFAULT_ID"
             coordinate={{
               latitude: state.location.coords.latitude,
               longitude: state.location.coords.longitude,
