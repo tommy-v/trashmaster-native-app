@@ -9,7 +9,7 @@ interface Props {
 export default function AddButton(props: Props): JSX.Element {
   return (
     <TouchableOpacity onPress={props.action}>
-      <Icon name="ios-add-circle" size={85} color="rgba(255,255,255,0.7)" />
+      <Icon name="ios-add-circle" size={85} color="rgba(255,255,255,1)" />
     </TouchableOpacity>
   );
 }

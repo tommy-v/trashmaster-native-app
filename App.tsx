@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
-import React, {Suspense} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { Suspense } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 // Views
@@ -11,9 +11,9 @@ import NewTrash from './screens/NewTrash';
 import TrashDetails from './screens/TrashDetails';
 
 // Store
-import {persistor, store} from './redux/configureStore';
-import {Provider, useSelector} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
+import { persistor, store } from './redux/configureStore';
+import { Provider, useSelector } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const Stack = createStackNavigator();
 
@@ -30,7 +30,7 @@ const AppContext = () => {
             <Stack.Screen
               name="map"
               component={Map}
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
             <Stack.Screen name="camera" component={Camera} />
             <Stack.Screen name="newTrash" component={NewTrash} />

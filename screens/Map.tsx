@@ -117,7 +117,7 @@ export default (props: Props) => {
         <TouchableOpacity
           onPress={() => goToPersonalLocation()}
           style={styles.locationButton}>
-          <Icon name="location-arrow" size={25} color="rgba(255,255,255,0.7)" />
+          <Icon name="location-arrow" size={25} color="rgba(255,255,255,1)" />
         </TouchableOpacity>
         {/* </View> */}
       </View>
