@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllTrashes } from '../redux/actions/trash';
+import { getAllTrashes } from '../../redux/actions/trash';
 
 // Components
 import { StyleSheet, View, Dimensions, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
-import AddButton from '../components/AddButton';
+import AddButton from '../../components/AddButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const screen = Dimensions.get('window');
