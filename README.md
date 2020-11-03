@@ -27,6 +27,7 @@
 - [🔍 What's inside](#-whats-inside)
 - [📚 Documentation](#-documentation)
 - [🙌 Contributions](#-contributions)
+  - [Repository rules](#repository-rules)
 
 ## 📱 Prototypes
 
@@ -71,3 +72,9 @@ npm run ios / npm run android
 ## 🙌 Contributions
 
 Feel free to contact us on Discord (badge on top) or through [Instagram](https://www.instagram.com/trashmaster_be/) | [facebook](https://www.facebook.com/Trashmaster-592354701141792) so that we can give you an access to our **Confluence wiki**.
+
+### Repository rules
+
+- **Code style**: Prettier + Linter.
+- **Commits**: Please follow the [Angular commit convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md).
+- **Branching**: Please add changes to an up to date personal feature branch. If you are ahead of some commits from the main branch, please **rebase**.
