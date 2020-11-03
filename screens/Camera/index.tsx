@@ -1,36 +1,37 @@
 // Libs
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 
 // Components
-import {RNCamera} from 'react-native-camera';
+import { RNCamera } from 'react-native-camera';
 
-export default props => {
+export default (props: any) => {
   const [state, setState] = useState({
     navigation: props.navigation,
     camera: null,
+    location: null,
   });
-  let camera = null; // Camera ref, out of state in order to avoid infinite rendering. 
+  let camera: any = null; // Camera ref, out of state in order to avoid infinite rendering.
 
   useEffect(() => {
     Geolocation.getCurrentPosition(
-      info => {
+      (info: any) => {
         setState({
           ...state,
-          location: info
+          location: info,
         });
       },
-      error => {
+      (error: any) => {
         console.log('Error:', error); // TODO Handle errors
       },
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000},
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
-  }, setState);
+  }, [state]);
 
   const takePicture = async () => {
     if (camera) {
-      const options = {quality: 0.5, base64: true};
+      const options = { quality: 0.5, base64: true };
       const data = await camera.takePictureAsync(options);
 
       state.navigation.navigate('newTrash', {
@@ -44,7 +45,7 @@ export default props => {
   return (
     <View style={styles.container}>
       <RNCamera
-        ref={ref => {
+        ref={(ref: any) => {
           camera = ref;
         }}
         captureAudio={false}
@@ -63,19 +64,16 @@ export default props => {
           buttonPositive: 'Ok',
           buttonNegative: 'Cancel',
         }}
-        onGoogleVisionBarcodesDetected={({barcodes}) => {
+        onGoogleVisionBarcodesDetected={({ barcodes }) => {
           console.log(barcodes);
         }}
       />
-      <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
-        <TouchableOpacity
-          onPress={takePicture}
-          style={styles.photoButton}
-        />
+      <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+        <TouchableOpacity onPress={takePicture} style={styles.photoButton} />
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -105,5 +103,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255,255,255,0.8)',
     backgroundColor: 'rgba(255,255,255,0.5)',
     marginBottom: 40,
+    position: 'absolute',
+    bottom: 10,
   },
 });
