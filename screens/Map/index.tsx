@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllTrashes } from '../../redux/actions/trash';
+import { getAllTrashes } from '../../store/actions/trash';
 
 // Components
 import { StyleSheet, View, Dimensions, TouchableOpacity } from 'react-native';

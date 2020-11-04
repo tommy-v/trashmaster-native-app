@@ -11,7 +11,7 @@ import TrashService from '../../services/trash.service';
 
 // Store
 import { useDispatch } from 'react-redux';
-import { turnLoading } from '../../redux/actions/global';
+import { turnLoading } from '../../store/actions/global';
 import MapView, { Marker } from 'react-native-maps';
 
 const screen = Dimensions.get('window');

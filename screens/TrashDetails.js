@@ -7,7 +7,7 @@ import {View, Text, Button, StyleSheet, Dimensions, Image} from 'react-native';
 
 // Store
 import {useDispatch, useSelector} from 'react-redux';
-import {turnLoading} from '../redux/actions/global';
+import {turnLoading} from '../store/actions/global';
 
 // Service
 import TrashService from '../services/trash.service';

@@ -9,11 +9,13 @@ import Map from './screens/Map';
 import Camera from './screens/Camera';
 import NewTrash from './screens/NewTrash';
 import TrashDetails from './screens/TrashDetails';
+import Login from './screens/Login';
 
 // Store
-import { persistor, store } from './redux/configureStore';
+import { persistor, store } from './store/configureStore';
 import { Provider, useSelector } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import AuthListener from './components/AuthListener';
 
 const Stack = createStackNavigator();
 
@@ -22,11 +24,12 @@ const AppContext = () => {
 
   return (
     <PersistGate loading={null} persistor={persistor}>
+      <AuthListener />
       <Spinner visible={globalState.isLoading} />
       <Suspense fallback={null}>
         <NavigationContainer>
           <Stack.Navigator>
-            {/* <Stack.Screen name="login" component={Login} /> */}
+            <Stack.Screen name="login" component={Login} />
             <Stack.Screen
               name="map"
               component={Map}
