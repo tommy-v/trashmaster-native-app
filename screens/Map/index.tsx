@@ -75,7 +75,7 @@ export default (props: Props) => {
           longitudeDelta: LONGITUDE_DELTA,
         }}
         onPress={($event: any) => trashDetails($event)}
-        image={require('../assets/marker-3.png')}
+        image={require('../../assets/marker-3.png')}
         centerOffset={{ x: 0, y: -50 }}
       />
     ));
