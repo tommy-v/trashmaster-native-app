@@ -16,6 +16,7 @@ import { persistor, store } from './store/configureStore';
 import { Provider, useSelector } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import AuthListener from './components/AuthListener';
+import AppTheme from './theme';
 
 const Stack = createStackNavigator();
 
@@ -27,9 +28,13 @@ const AppContext = () => {
       <AuthListener />
       <Spinner visible={globalState.isLoading} />
       <Suspense fallback={null}>
-        <NavigationContainer>
+        <NavigationContainer theme={AppTheme}>
           <Stack.Navigator>
-            <Stack.Screen name="login" component={Login} />
+            <Stack.Screen
+              name="login"
+              component={Login}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="map"
               component={Map}
