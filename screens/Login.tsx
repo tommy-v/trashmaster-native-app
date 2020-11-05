@@ -6,10 +6,11 @@ import { RootStackParamList } from 'types/global';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 // Components
-import { Text, View, Button, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import Input from '../components/Input';
 
 import { Theme } from '@react-navigation/native/lib/typescript/src/types';
+import SimpleButton from '../components/SimpleButton';
 
 type LoginScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -85,7 +86,11 @@ export default function Login(props: Props) {
       {errors.password && (
         <Text style={{ color: colors.notification }}>Password required</Text>
       )}
-      <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <SimpleButton
+        title="Login"
+        onPress={handleSubmit(onSubmit)}
+        backgroundColor={colors.primary}
+      />
     </View>
   );
 }
