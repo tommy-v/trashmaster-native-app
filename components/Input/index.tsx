@@ -9,7 +9,6 @@ interface Props extends TextInputProps {
 export default function Input(props: Props) {
   const styles = StyleSheet.create({
     input: {
-      margin: 15,
       height: 40,
       borderRadius: 30,
       borderWidth: 1,

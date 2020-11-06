@@ -8,6 +8,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 // Components
 import { Text, View, StyleSheet } from 'react-native';
 import Input from '../components/Input';
+import { Stack } from 'react-native-spacing-system';
 
 import { Theme } from '@react-navigation/native/lib/typescript/src/types';
 import SimpleButton from '../components/SimpleButton';
@@ -63,9 +64,11 @@ export default function Login(props: Props) {
         rules={{ required: true }}
         defaultValue=""
       />
+      <Stack size={8} />
       {errors.email && (
         <Text style={{ color: colors.notification }}>Email required</Text>
       )}
+      <Stack size={16} />
       <Controller
         control={control}
         render={({ onChange, onBlur, value }) => (
@@ -83,9 +86,11 @@ export default function Login(props: Props) {
         defaultValue=""
         rules={{ required: true }}
       />
+      <Stack size={8} />
       {errors.password && (
         <Text style={{ color: colors.notification }}>Password required</Text>
       )}
+      <Stack size={16} />
       <SimpleButton
         title="Login"
         onPress={handleSubmit(onSubmit)}
