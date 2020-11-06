@@ -6,9 +6,9 @@ import { RootStackParamList } from 'types/global';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 // Components
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import Input from '../components/Input';
-import { Stack } from 'react-native-spacing-system';
+import { Inset, Stack } from 'react-native-spacing-system';
 
 import { Theme } from '@react-navigation/native/lib/typescript/src/types';
 import SimpleButton from '../components/SimpleButton';
@@ -33,21 +33,14 @@ export default function Login(props: Props) {
     state.navigation.navigate('map');
   };
 
-  const styles = StyleSheet.create({
-    container: {
-      display: 'flex',
-      alignItems: 'center',
-    },
-    logo: {
-      padding: 100,
-    },
-  });
-
   return (
     <View style={styles.container}>
-      <View style={styles.logo}>
-        <Text>Trashmaster</Text>
-      </View>
+      <Inset all={100}>
+        <Image
+          style={styles.logo}
+          source={require('../assets/docs/trash-ios-app-icon.png')}
+        />
+      </Inset>
       <Controller
         control={control}
         render={({ onChange, onBlur, value }) => (
@@ -99,3 +92,15 @@ export default function Login(props: Props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    resizeMode: 'stretch',
+  },
+});
