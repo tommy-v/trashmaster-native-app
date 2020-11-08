@@ -1,24 +1,14 @@
 import 'react-native-gesture-handler';
 import React, { Suspense } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Spinner from 'react-native-loading-spinner-overlay';
 
-// Views
-import Map from './screens/Map';
-import Camera from './screens/Camera';
-import NewTrash from './screens/NewTrash';
-import TrashDetails from './screens/TrashDetails';
-import Login from './screens/Login';
+import Spinner from 'react-native-loading-spinner-overlay';
+import Navigator from './components/Navigator';
 
 // Store
 import { persistor, store } from './store/configureStore';
 import { Provider, useSelector } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import AuthListener from './components/AuthListener';
-import AppTheme from './theme';
-
-const Stack = createStackNavigator();
 
 const AppContext = () => {
   const globalState = useSelector((state: any) => state.global);
@@ -28,23 +18,7 @@ const AppContext = () => {
       <AuthListener />
       <Spinner visible={globalState.isLoading} />
       <Suspense fallback={null}>
-        <NavigationContainer theme={AppTheme}>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="login"
-              component={Login}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="map"
-              component={Map}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen name="camera" component={Camera} />
-            <Stack.Screen name="newTrash" component={NewTrash} />
-            <Stack.Screen name="trashDetails" component={TrashDetails} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Navigator />
       </Suspense>
     </PersistGate>
   );

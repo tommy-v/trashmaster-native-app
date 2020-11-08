@@ -6,6 +6,7 @@
   - [Path issue](#path-issue)
 - [Divers](#divers)
 - [Update React Native](#update-react-native)
+- [Authentication flow](#authentication-flow)
 
 ## What about IDEWorkspaceChecks.plist?
 
@@ -58,3 +59,7 @@ https://reactnavigation.org/docs/navigation-prop/ props navigation `props.naviga
 ## Update React Native
 
 If we missed too many updates and need to upgrade for a newer iOS release, it is sometimes way way way more productive to consider RN as a wrap, and just recreate an empty project wit the the new layer and then putting all the JS logic inside. More and more stuff around are auto-generated depending on your dependencies now. 
+
+## Authentication flow
+
+https://reactnavigation.org/docs/auth-flow/
